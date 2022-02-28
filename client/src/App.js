@@ -18,7 +18,7 @@ import Nav from './components/Nav';
 import { Provider } from 'react-redux';
 // import { StoreProvider } from './utils/GlobalState';
 // importing new functionalities from store.js
-
+import store from './utils/store';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 
@@ -40,13 +40,13 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
+// replacing StoreProvider from GlobalState with Provider from react-redux. Not sure about the store={store}, but documentation has it (used in index.js, but we already created in own store.js), so i'm using it! Some communication with store.js im sure....
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <StoreProvider>
+          <Provider store={store}>
             <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
@@ -57,7 +57,7 @@ function App() {
               <Route exact path="/products/:id" component={Detail} />
               <Route component={NoMatch} />
             </Switch>
-          </StoreProvider>
+          </Provider>
         </div>
       </Router>
     </ApolloProvider>
