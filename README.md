@@ -18,7 +18,7 @@ In order to install the app locally, first run "npm i" in the command line inter
 ## Usage
 
 
-![Preview](https://raw.githubusercontent.com/hargis32/HW-21-Book-Search/main/assets/images/2022-02-23%20(9).png)
+![Preview](https://raw.githubusercontent.com/hargis32/HW-22-Redux-Store/main/client/src/assets/2022-02-28%20(2).png)
 
 [Heroku Deploy](https://damp-falls-51505.herokuapp.com/)
   
