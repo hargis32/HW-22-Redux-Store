@@ -11,6 +11,17 @@ import {
   TOGGLE_CART
 } from "./actions";
 
+// move initial state object to reducer
+// inital state values referenced from components with state
+const initialState = {
+  cart: [],
+  products: [],
+  categories: [],
+  currentCategory: [],
+  // cart should not be open for initial state, will be open after items added?
+  cartOpen: false
+}
+
 export const reducer = (state, action) => {
   switch (action.type) {
     case UPDATE_PRODUCTS:
